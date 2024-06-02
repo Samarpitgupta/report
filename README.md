@@ -1,6 +1,10 @@
-# Spring Boot Report API Application
+# Report Generation Application
 
 This project is a Spring Boot application that serves as a Report Generation Tool, consisting of multiple modules to handle different functionalities.
+
+## Status 
+
+As of now, we have just started this project, so you won't find much code. We have added endpoints for generating AI responses in the `gen-ai-engine` module based on the provided prompt in the HTTP request **message** parameter.
 
 ## Table of Contents
 
