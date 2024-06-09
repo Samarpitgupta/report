@@ -12,7 +12,7 @@
     <artifactId>report</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>report-api</name>
+    <name>report</name>
     <description>Report Generation Tool</description>
     <modules>
         <module>config-server</module>
@@ -25,14 +25,13 @@
         <module>notification-api</module>
     </modules>
     <properties>
-        <java.version>22</java.version>
+        <java.version>21</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -49,29 +48,25 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
         <!-- Springfox for Swagger Integration -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-
-        <!-- Optional: For OpenAPI documentation -->
+        <!-- For OpenAPI documentation -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-oas</artifactId>
             <version>3.0.0</version>
         </dependency>
 
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
             <version>4.1.2</version>
-        </dependency>
-
-
-        <dependency>
+        </dependency>-->
+<!--        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>1.5.5.Final</version>
@@ -81,7 +76,11 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>1.5.5.Final</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.28.0</version>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -106,6 +105,11 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.4.0.905</version>
             </plugin>
         </plugins>
     </build>
