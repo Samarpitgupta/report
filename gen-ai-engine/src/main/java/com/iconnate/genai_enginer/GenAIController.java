@@ -3,7 +3,6 @@ package com.iconnate.genai_enginer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.messages.UserMessage;
-import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,11 +39,11 @@ public class GenAIController {
     }
 
     @PostMapping("/generateResponseStream")
-    public Flux<ChatResponse> generateStream(@Valid @RequestBody MessagePayload payload) {
+    public Flux<String> generateStream(@Valid @RequestBody MessagePayload payload) {
         String message = payload.getMessage();
         logger.info("Generating stream response for message: {}", message);
         Prompt prompt = new Prompt(new UserMessage(message));
-        return chatModel.stream(prompt);
+        return chatModel.stream(prompt.getContents());
     }
 
     public static class MessagePayload {
