@@ -9,8 +9,8 @@ As of now, we have just started this project, so you won't find much code. We ha
 ## Table of Contents
 
 - [Modules](#modules)
-  - [Config Server](#config-server)
   - [Gen AI Engine](#gen-ai-engine)
+  - [Config Server](#config-server)
   - [Vault](#vault)
   - [Cloud Integration API](#cloud-integration-api)
   - [Document API](#document-api)
@@ -24,15 +24,44 @@ As of now, we have just started this project, so you won't find much code. We ha
 
 ## Modules
 
-### Config Server
-
-The Config Server module is responsible for managing and providing configuration properties for the other modules in a centralized manner.
-
 ### Gen AI Engine
 
 The Gen AI Engine module integrates AI capabilities into the application, providing various AI-powered features and functionalities. It is currently integrated with **Ollama**. This module supports the **Ollama** text generation with **OllamaChatModel**.
 
+#### API Endpoints
+
+- **POST /v1/report/ai/generateResponse**
+  - **Description**: Generates a response based on the provided message.
+  - **Request Body**:
+    ```json
+    {
+      "message": "Your input message"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+      "generation": "Generated response"
+    }
+    ```
+
+- **POST /v1/report/ai/generateResponseStream**
+  - **Description**: Generates a stream of responses based on the provided message.
+  - **Request Body**:
+    ```json
+    {
+      "message": "Your input message"
+    }
+    ```
+  - **Response**: A stream of generated responses.
+
 ![Ollama API Low-Level Design](files/OllamaApi_LLD.png)
+
+### Config Server
+
+The Config Server module is responsible for managing and providing configuration properties for the other modules in a centralized manner.
+
+
 ### Vault
 
 The Vault module handles the secure storage of secrets, tokens, and other sensitive information.

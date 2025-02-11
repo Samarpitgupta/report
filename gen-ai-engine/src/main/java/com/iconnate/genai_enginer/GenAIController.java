@@ -15,7 +15,7 @@ import jakarta.validation.constraints.NotEmpty;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/report/ai")
+@RequestMapping("/v1/report/ai")
 public class GenAIController {
 
     private static final Logger logger = LoggerFactory.getLogger(GenAIController.class);
