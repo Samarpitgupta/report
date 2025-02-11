@@ -32,6 +32,7 @@ The Config Server module is responsible for managing and providing configuration
 
 The Gen AI Engine module integrates AI capabilities into the application, providing various AI-powered features and functionalities. It is currently integrated with **Ollama**. This module supports the **Ollama** text generation with **OllamaChatModel**.
 
+![Ollama API Low-Level Design](files/OllamaApi_LLD.png)
 ### Vault
 
 The Vault module handles the secure storage of secrets, tokens, and other sensitive information.
